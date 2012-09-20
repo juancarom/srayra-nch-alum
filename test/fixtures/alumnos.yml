@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  documento: 1
+  apellidos: MyString
+  nombres: MyString
+  sexo_id: 1
+  fecha_de_nacimiento: 2012-09-20
+  obra_social_id: 1
+
+two:
+  documento: 1
+  apellidos: MyString
+  nombres: MyString
+  sexo_id: 1
+  fecha_de_nacimiento: 2012-09-20
+  obra_social_id: 1

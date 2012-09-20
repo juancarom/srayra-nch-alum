@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  alumno_id: 1
+  hospital_id: 1
+  fecha_de_diagnostico: 2012-09-20
+  biopsia: false
+
+two:
+  alumno_id: 1
+  hospital_id: 1
+  fecha_de_diagnostico: 2012-09-20
+  biopsia: false

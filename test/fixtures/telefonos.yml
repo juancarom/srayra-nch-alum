@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tipo_de_telefono_id: 1
+  codigo_de_area: 1
+  numero: 1
+
+two:
+  tipo_de_telefono_id: 1
+  codigo_de_area: 1
+  numero: 1

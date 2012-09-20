@@ -1,0 +1,41 @@
+<%= form_for(@alumno) do |f| %>
+  <% if @alumno.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@alumno.errors.count, "error") %> prohibited this alumno from being saved:</h2>
+
+      <ul>
+      <% @alumno.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :documento %><br />
+    <%= f.number_field :documento %>
+  </div>
+  <div class="field">
+    <%= f.label :apellidos %><br />
+    <%= f.text_field :apellidos %>
+  </div>
+  <div class="field">
+    <%= f.label :nombres %><br />
+    <%= f.text_field :nombres %>
+  </div>
+  <div class="field">
+    <%= f.label :sexo_id %><br />
+    <%= f.number_field :sexo_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_de_nacimiento %><br />
+    <%= f.date_select :fecha_de_nacimiento %>
+  </div>
+  <div class="field">
+    <%= f.label :obra_social_id %><br />
+    <%= f.number_field :obra_social_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

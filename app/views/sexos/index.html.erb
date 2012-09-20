@@ -1,0 +1,23 @@
+<h1>Listing sexos</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sexos.each do |sexo| %>
+  <tr>
+    <td><%= sexo.nombre %></td>
+    <td><%= link_to 'Show', sexo %></td>
+    <td><%= link_to 'Edit', edit_sexo_path(sexo) %></td>
+    <td><%= link_to 'Destroy', sexo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sexo', new_sexo_path %>
