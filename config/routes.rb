@@ -1,4 +1,10 @@
 NutriendoChubutAlumnos::Application.routes.draw do
+  resources :obra_socials
+
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   resources :diagnosticos
 
   resources :hospitals
