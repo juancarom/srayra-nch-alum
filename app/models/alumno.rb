@@ -1,5 +1,5 @@
 class Alumno < ActiveRecord::Base
-  attr_accessible :apellidos, :documento, :fecha_de_nacimiento, :nombres, :obra_social_id, :sexo_id, :diagnostico_attributes, :telefono_attributes, :domicilio_attributes
+  attr_accessible :region_id, :escuela_id, :apellidos, :documento, :fecha_de_nacimiento, :nombres, :obra_social_id, :sexo_id, :diagnostico_attributes, :telefono_attributes, :domicilio_attributes
   
   validates :documento, :presence => true
   validates :documento, :uniqueness => true
@@ -9,6 +9,8 @@ class Alumno < ActiveRecord::Base
   validates :obra_social_id, :presence => true
   validates :sexo_id, :presence => true
   
+  belongs_to :escuela
+  belongs_to :region
   belongs_to :sexo
   belongs_to :obra_social
   # has_many a la clase diagnostico :dependent => :destroy para poder eliminar las clases dependientes en caso de borrar la persona

@@ -1,4 +1,8 @@
 NutriendoChubutAlumnos::Application.routes.draw do
+  resources :regions
+
+  resources :escuelas
+
   resources :obra_socials
 
   ActiveAdmin.routes(self)

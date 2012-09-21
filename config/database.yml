@@ -27,7 +27,7 @@
   development:
     adapter: mysql
     encoding: utf8
-    database: nutriendochubut
+    database: nch
     username: root
     password: root
     host: 127.0.0.1
@@ -36,7 +36,7 @@
   test:
     adapter: mysql
     encoding: utf8
-    database: nutriendochubut
+    database: nch
     username: root
     password: root
     host: 127.0.0.1
@@ -45,7 +45,7 @@
   production:
     adapter: mysql
     encoding: utf8
-    database: nutriendochubut
+    database: nch
     username: root
     password: root
     host: 127.0.0.1

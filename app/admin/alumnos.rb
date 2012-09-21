@@ -1,11 +1,14 @@
 ActiveAdmin.register Alumno do
   #:apellidos, :documento, :fecha_de_nacimiento, :nombres, :obra_social_id, :sexo_id
   show :title => "Alumno" do |alumno|
-        attributes_table do  
+        attributes_table do
+           row :region
+           row :escuela  
            row :documento
            row :apellidos
            row :nombres
            row :sexo_id
+	   row :obra_social_id
            row :fecha_de_nacimiento
         end
         div :class => "panel" do
@@ -94,10 +97,13 @@ ActiveAdmin.register Alumno do
 ################################################################################################################
 ################################################################################################################
   index do
+    column :region
+    column :escuela
     column :documento
     column :apellidos
     column :nombres
     column :sexo
+    column :obra_social
     column :fecha_de_nacimiento
     column "Edad" do |alumno|
       alumno.edad
@@ -109,11 +115,13 @@ ActiveAdmin.register Alumno do
   end
 ################################################################################################################
 ################################################################################################################
-  
+  filter :region_id
+  filter :escuela_id
   filter :documento
   filter :apellidos
   filter :nombres
   filter :sexo_id
+  filter :obra_social
   
 ################################################################################################################
 ################################################################################################################
@@ -122,14 +130,17 @@ ActiveAdmin.register Alumno do
    form do |f|
       #:apellidos, :documento, :fecha_de_nacimiento, :nombres, :obra_social_id, :sexo_id
       f.inputs "Datos del Alumno:" do
+        f.input :region_id, :as => :select, :collection => Region.all
+        f.input :escuela_id, :as => :select, :collection => Escuela.all
         f.input :documento
         f.input :apellidos
         f.input :nombres
         f.input :sexo_id, :as => :select, :collection => Sexo.all 
+	f.input :obra_social_id, :as => :select, :collection => ObraSocial.all
         f.input :fecha_de_nacimiento, :as => :date, :start_year => 1900
         f.has_many :telefono do |t|
           t.inputs "Telefonos:" do
-            t.input :tipo_de_telefono_id, :as => :select, :collection => TipoDeTelefono.all 
+           t.input :tipo_de_telefono_id, :as => :select, :collection => TipoDeTelefono.all 
             t.input :codigo_de_area
             t.input :numero
             t.input :_destroy, :as=>:boolean, :required => false, :label=>'TILDE PARA ELIMINAR TELEFONO Y PRESIONE GUARDAR ALUMNO'
